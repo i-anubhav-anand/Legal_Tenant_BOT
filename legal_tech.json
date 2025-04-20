@@ -1,0 +1,519 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ab",
+    "name": "Legal Tech RAG API",
+    "description": "Collection for testing the Legal Tech RAG API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Knowledge Base",
+      "description": "Endpoints for managing knowledge bases",
+      "item": [
+        {
+          "name": "List Knowledge Bases",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/knowledge-bases/",
+              "host": ["{{baseUrl}}"],
+              "path": ["knowledge-bases", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Knowledge Base",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/create-kb/",
+              "host": ["{{baseUrl}}"],
+              "path": ["create-kb", ""]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"California Rental Laws\",\n  \"description\": \"Knowledge base containing California tenant and rental laws\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Knowledge Base",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/knowledge-bases/{{knowledgeBaseId}}/",
+              "host": ["{{baseUrl}}"],
+              "path": ["knowledge-bases", "{{knowledgeBaseId}}", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Knowledge Base Documents",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/knowledge-bases/{{knowledgeBaseId}}/documents/",
+              "host": ["{{baseUrl}}"],
+              "path": ["knowledge-bases", "{{knowledgeBaseId}}", "documents", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Documents",
+      "description": "Endpoints for managing documents",
+      "item": [
+        {
+          "name": "List Documents",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/documents/",
+              "host": ["{{baseUrl}}"],
+              "path": ["documents", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Document",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/documents/{{documentId}}/",
+              "host": ["{{baseUrl}}"],
+              "path": ["documents", "{{documentId}}", ""]
+            }
+          }
+        },
+        {
+          "name": "Ingest URL Document",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/ingest/",
+              "host": ["{{baseUrl}}"],
+              "path": ["ingest", ""]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"https://sfrb.org/sites/default/files/Document/Form/579%20Multilingual%20Counseling%20Referral%20List%206.7.19.pdf\",\n  \"title\": \"SF Rent Board - Tenant Counseling Resources\",\n  \"description\": \"San Francisco Rent Board tenant counseling referral list\",\n  \"knowledge_base_id\": \"{{knowledgeBaseId}}\",\n  \"conversation_id\": \"{{conversationId}}\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Ingest File Document",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/ingest/",
+              "host": ["{{baseUrl}}"],
+              "path": ["ingest", ""]
+            },
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/path/to/document.pdf"
+                },
+                {
+                  "key": "title",
+                  "value": "Lease Agreement"
+                },
+                {
+                  "key": "description",
+                  "value": "Apartment lease agreement"
+                },
+                {
+                  "key": "knowledge_base_id",
+                  "value": "{{knowledgeBaseId}}",
+                  "disabled": false
+                },
+                {
+                  "key": "conversation_id",
+                  "value": "{{conversationId}}",
+                  "disabled": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Document Chunks",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/documents/{{documentId}}/chunks/",
+              "host": ["{{baseUrl}}"],
+              "path": ["documents", "{{documentId}}", "chunks", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Queries",
+      "description": "Endpoints for querying the RAG system",
+      "item": [
+        {
+          "name": "Query RAG",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/query/",
+              "host": ["{{baseUrl}}"],
+              "path": ["query", ""]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"What are tenant rights in San Francisco?\",\n  \"top_k\": 3,\n  \"temperature\": 0.0,\n  \"knowledge_base_id\": \"{{knowledgeBaseId}}\",\n  \"conversation_id\": \"{{conversationId}}\"\n}"
+            }
+          }
+        },
+        {
+          "name": "List Queries",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/queries/",
+              "host": ["{{baseUrl}}"],
+              "path": ["queries", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Conversations",
+      "description": "Endpoints for managing conversations",
+      "item": [
+        {
+          "name": "List Conversations",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/conversations/",
+              "host": ["{{baseUrl}}"],
+              "path": ["conversations", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Conversation",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/conversations/",
+              "host": ["{{baseUrl}}"],
+              "path": ["conversations", ""]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Rental Increase Question\",\n  \"initial_message\": \"I just received a notice that my rent is increasing by 10%. Is this legal in San Francisco?\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Conversation",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/conversations/{{conversationId}}/",
+              "host": ["{{baseUrl}}"],
+              "path": ["conversations", "{{conversationId}}", ""]
+            }
+          }
+        },
+        {
+          "name": "Add Message to Conversation",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/conversations/{{conversationId}}/messages/",
+              "host": ["{{baseUrl}}"],
+              "path": ["conversations", "{{conversationId}}", "messages", ""]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"I live in an apartment building with 25 units built in 1972.\",\n  \"is_from_user\": true\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Conversation Documents",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/conversations/{{conversationId}}/documents/",
+              "host": ["{{baseUrl}}"],
+              "path": ["conversations", "{{conversationId}}", "documents", ""]
+            }
+          }
+        },
+        {
+          "name": "List Active Conversations",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/conversations/active/",
+              "host": ["{{baseUrl}}"],
+              "path": ["conversations", "active", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cases",
+      "description": "Endpoints for managing legal cases",
+      "item": [
+        {
+          "name": "List Cases",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cases/",
+              "host": ["{{baseUrl}}"],
+              "path": ["cases", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Case",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/cases/",
+              "host": ["{{baseUrl}}"],
+              "path": ["cases", ""]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"conversation_id\": \"{{conversationId}}\",\n  \"title\": \"Illegal Rent Increase\",\n  \"issue_type\": \"Rent Control Violation\",\n  \"priority\": 3,\n  \"summary\": \"Tenant received a rent increase notice that may violate local rent control laws.\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Case",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cases/{{caseId}}/",
+              "host": ["{{baseUrl}}"],
+              "path": ["cases", "{{caseId}}", ""]
+            }
+          }
+        },
+        {
+          "name": "Update Case Status",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "{{baseUrl}}/cases/{{caseId}}/status/",
+              "host": ["{{baseUrl}}"],
+              "path": ["cases", "{{caseId}}", "status", ""]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"in_progress\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Case Priority",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "{{baseUrl}}/cases/{{caseId}}/priority/",
+              "host": ["{{baseUrl}}"],
+              "path": ["cases", "{{caseId}}", "priority", ""]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"priority\": 4\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Case Analysis",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "{{baseUrl}}/cases/{{caseId}}/analysis/",
+              "host": ["{{baseUrl}}"],
+              "path": ["cases", "{{caseId}}", "analysis", ""]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"legal_analysis\": \"Based on San Francisco Rent Ordinance, this increase appears to exceed the allowable annual percentage.\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lawyers",
+      "description": "Endpoints for managing lawyers",
+      "item": [
+        {
+          "name": "List Lawyers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/lawyers/",
+              "host": ["{{baseUrl}}"],
+              "path": ["lawyers", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Lawyer",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/lawyers/",
+              "host": ["{{baseUrl}}"],
+              "path": ["lawyers", ""]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jane Smith\",\n  \"email\": \"jane.smith@example.com\",\n  \"specialization\": \"Tenant Rights\",\n  \"years_of_experience\": 8\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Lawyer",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/lawyers/{{lawyerId}}/",
+              "host": ["{{baseUrl}}"],
+              "path": ["lawyers", "{{lawyerId}}", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Lawyer Cases",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/lawyers/{{lawyerId}}/cases/",
+              "host": ["{{baseUrl}}"],
+              "path": ["lawyers", "{{lawyerId}}", "cases", ""]
+            }
+          }
+        },
+        {
+          "name": "Claim Case",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/cases/{{caseId}}/claim/",
+              "host": ["{{baseUrl}}"],
+              "path": ["cases", "{{caseId}}", "claim", ""]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lawyer\": \"{{lawyerId}}\"\n}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000/api"
+    },
+    {
+      "key": "knowledgeBaseId",
+      "value": "YOUR_KB_ID"
+    },
+    {
+      "key": "conversationId",
+      "value": "YOUR_CONVERSATION_ID"
+    },
+    {
+      "key": "documentId",
+      "value": "YOUR_DOCUMENT_ID"
+    },
+    {
+      "key": "caseId",
+      "value": "YOUR_CASE_ID"
+    },
+    {
+      "key": "lawyerId",
+      "value": "YOUR_LAWYER_ID"
+    }
+  ]
+} 

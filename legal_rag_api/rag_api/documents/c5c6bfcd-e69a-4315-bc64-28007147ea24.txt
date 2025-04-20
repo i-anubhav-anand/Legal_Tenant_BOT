@@ -1,0 +1,64 @@
+
+    CONSULTING SERVICES AGREEMENT
+
+    This Consulting Services Agreement (the "Agreement") is made effective as of January 1, 2023 (the "Effective Date"), by and between ABC Corporation, with its principal place of business at 123 Main Street, Anytown, USA ("Client"), and XYZ Consulting LLC, with its principal place of business at 456 Oak Avenue, Othertown, USA ("Consultant").
+
+    1. SERVICES
+    1.1 Scope of Services. Consultant will provide professional consulting services to Client as described in the Statement of Work attached as Exhibit A (the "Services"). Additional Statements of Work may be added to this Agreement by mutual written agreement of the parties.
+    
+    1.2 Performance Standards. Consultant shall perform the Services in a professional manner and in accordance with industry standards and the requirements set forth in this Agreement and any applicable Statement of Work.
+    
+    2. COMPENSATION
+    2.1 Fees. Client shall pay Consultant the fees as set forth in each applicable Statement of Work. Unless otherwise specified in the Statement of Work, Consultant shall invoice Client monthly for Services performed.
+    
+    2.2 Expenses. Client shall reimburse Consultant for reasonable expenses incurred in connection with the Services, provided that such expenses are pre-approved in writing by Client and Consultant submits appropriate documentation supporting such expenses.
+    
+    2.3 Payment Terms. Client shall pay all undisputed invoices within thirty (30) days after receipt. Any disputed invoice amounts shall be resolved by the parties in good faith as quickly as possible.
+    
+    3. TERM AND TERMINATION
+    3.1 Term. This Agreement shall commence on the Effective Date and continue until all Statements of Work have been completed, unless earlier terminated as provided herein.
+    
+    3.2 Termination for Convenience. Either party may terminate this Agreement or any Statement of Work at any time upon thirty (30) days' prior written notice to the other party.
+    
+    3.3 Termination for Cause. Either party may terminate this Agreement immediately upon written notice to the other party if the other party: (a) breaches any material term of this Agreement and fails to cure such breach within fifteen (15) days after receipt of written notice; or (b) becomes insolvent, files for bankruptcy, or makes an assignment for the benefit of creditors.
+    
+    3.4 Effect of Termination. Upon termination of this Agreement: (a) Client shall pay Consultant for all Services performed up to the date of termination and for any non-cancellable obligations incurred by Consultant; and (b) each party shall return or destroy all confidential information of the other party.
+    
+    4. CONFIDENTIALITY
+    4.1 Definition. "Confidential Information" means all non-public information disclosed by one party (the "Disclosing Party") to the other party (the "Receiving Party"), whether orally or in writing, that is designated as confidential or that reasonably should be understood to be confidential given the nature of the information and the circumstances of disclosure.
+    
+    4.2 Obligations. The Receiving Party shall: (a) protect the confidentiality of the Disclosing Party's Confidential Information using the same degree of care that it uses to protect the confidentiality of its own confidential information of like kind (but in no event less than reasonable care); (b) not use any Confidential Information for any purpose outside the scope of this Agreement; and (c) not disclose Confidential Information to any third party without prior written consent of the Disclosing Party.
+    
+    5. INTELLECTUAL PROPERTY
+    5.1 Client Materials. Client shall own all right, title, and interest in and to any materials, data, or information provided by Client to Consultant for use in connection with the Services ("Client Materials").
+    
+    5.2 Deliverables. Upon full payment of all amounts due under this Agreement, Consultant assigns to Client all right, title, and interest in and to the deliverables specified in each Statement of Work.
+    
+    5.3 Consultant Materials. Consultant shall retain all right, title, and interest in and to any tools, methodologies, and materials developed or obtained by Consultant prior to or independently of this Agreement and used by Consultant in connection with the Services ("Consultant Materials").
+    
+    6. LIMITATION OF LIABILITY
+    6.1 IN NO EVENT SHALL EITHER PARTY BE LIABLE TO THE OTHER PARTY FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO THIS AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+    
+    6.2 EACH PARTY'S TOTAL CUMULATIVE LIABILITY ARISING OUT OF OR RELATED TO THIS AGREEMENT SHALL NOT EXCEED THE TOTAL AMOUNT PAID BY CLIENT TO CONSULTANT UNDER THIS AGREEMENT DURING THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY.
+    
+    7. GENERAL PROVISIONS
+    7.1 Independent Contractor. Consultant is an independent contractor and not an employee, agent, joint venturer, or partner of Client.
+    
+    7.2 Assignment. Neither party may assign this Agreement without the prior written consent of the other party, except that either party may assign this Agreement to a successor in connection with a merger, acquisition, or sale of all or substantially all of its assets.
+    
+    7.3 Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of laws provisions.
+    
+    7.4 Dispute Resolution. Any dispute arising out of or related to this Agreement shall be resolved through binding arbitration conducted in accordance with the rules of the American Arbitration Association.
+    
+    7.5 Entire Agreement. This Agreement constitutes the entire agreement between the parties with respect to the subject matter hereof and supersedes all prior and contemporaneous agreements or communications.
+    
+    7.6 Amendments. This Agreement may only be modified by a written amendment signed by authorized representatives of both parties.
+    
+    IN WITNESS WHEREOF, the parties have executed this Agreement as of the Effective Date.
+    
+    ABC CORPORATION                 XYZ CONSULTING LLC
+    
+    By: _____________________       By: _____________________
+    Name: John Smith               Name: Jane Doe
+    Title: CEO                     Title: Managing Partner
+    

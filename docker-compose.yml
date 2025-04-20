@@ -1,0 +1,33 @@
+services:
+  backend:
+    build:
+      context: ./legal_rag_api
+    container_name: legal-tech-backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - DJANGO_SECRET_KEY=django-insecure-twoq^nl-$-m^_o+3hlgma#pxtwni%y-+3@r6hmvehf4pt@g7wu
+      - ALLOWED_HOSTS=localhost,127.0.0.1
+    volumes:
+      - ./legal_rag_api:/app
+      - ./data:/app/data
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+
+  frontend:
+    build:
+      context: ./frontend/legal-tenant-bot
+    container_name: legal-tech-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api
+    depends_on:
+      - backend
+
+volumes:
+  data: 
